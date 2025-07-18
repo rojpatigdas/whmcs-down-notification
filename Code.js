@@ -1,7 +1,14 @@
+// Code.js
 // Monitors the status of a website and sends an alert to Google Chat if the site is down.
+// Configure your webhook URL in the variable below. Do not commit real tokens to version control.
+
+/**
+ * Checks the status of a website and sends an alert to Google Chat if the site is down.
+ * Uses script properties to track consecutive failures and avoid duplicate alerts.
+ */
 function checkWebsiteStatus() {
   const url = "https://secure.itgenius.com.au"; // URL to monitor
-  const chatWebhookUrl = "YOUR_CHAT_WEBHOOK_URL"; // TODO: Insert your Google Chat webhook URL here. Do not commit real tokens to version control.
+  const chatWebhookUrl = "YOUR_CHAT_WEBHOOK_URL"; // TODO: Insert your Google Chat webhook URL here.
   const scriptProperties = PropertiesService.getScriptProperties(); // Used to store persistent script state
   const consecutiveFailures = scriptProperties.getProperty("consecutiveFailures") ? parseInt(scriptProperties.getProperty("consecutiveFailures")) : 0;
   const alertSent = scriptProperties.getProperty("alertSent"); // Flag to avoid duplicate alerts
