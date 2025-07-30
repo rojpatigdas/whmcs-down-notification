@@ -7,7 +7,7 @@
  * Uses script properties to track consecutive failures and avoid duplicate alerts.
  */
 function checkWebsiteStatus() {
-  const url = "https://secure.itgenius.com.au"; // URL to monitor
+  const url = "https://secure.example.com.au"; // URL to monitor
   const chatWebhookUrl = "YOUR_CHAT_WEBHOOK_URL"; // TODO: Insert your Google Chat webhook URL here.
   const scriptProperties = PropertiesService.getScriptProperties(); // Used to store persistent script state
   const consecutiveFailures = scriptProperties.getProperty("consecutiveFailures") ? parseInt(scriptProperties.getProperty("consecutiveFailures")) : 0;
